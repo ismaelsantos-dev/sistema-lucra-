@@ -1,0 +1,152 @@
+:root {
+    --bg-main: #000000;
+    --bg-surface: #0a0a0a;
+    --border: #1a1a1a;
+    --accent: #00ff88;
+    --info: #00aaff;
+    --text-p: #ffffff;
+    --text-s: #777777;
+    --sidebar-width: 280px;
+    --transition-pro: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-p);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* ESTRUTURA MASTER */
+.conteudo {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    min-height: 100vh;
+}
+
+/* MENU LATERAL (SIDEBAR) */
+.caixa-nav {
+    background: var(--bg-surface);
+    border-right: 1px solid var(--border);
+    padding: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo-area h1 { font-size: 1.4rem; color: var(--info); margin-bottom: 3rem; }
+.logo-area span { color: var(--accent); }
+
+.nav-title {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-s);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem 0 1rem 0;
+}
+
+.navegação ul { list-style: none; }
+
+.navegação li a {
+    text-decoration: none;
+    color: var(--text-p);
+    padding: 14px 18px;
+    display: block;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    transition: var(--transition-pro);
+    font-size: 0.95rem;
+}
+
+.navegação li a:hover {
+    background: #111;
+    color: var(--accent);
+    transform: translateX(10px);
+}
+
+.navegação li a.active {
+    background: rgba(0, 170, 255, 0.1);
+    color: var(--info);
+    border-left: 4px solid var(--info);
+}
+
+/* CONTEÚDO PRINCIPAL */
+.caixa-agrupamento {
+    padding: 4rem; /* MUITO RESPIRO */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CARDS E DASHBOARD */
+.principais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.caixa, .caixa-lucro, .cadastrar-produtos {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* NÚMEROS GRANDES */
+.label { color: var(--text-s); font-size: 0.8rem; text-transform: uppercase; }
+#total-investido, #lucro-acumulado {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+    letter-spacing: -1px;
+}
+#total-investido { color: var(--info); }
+#lucro-acumulado { color: var(--accent); }
+
+/* SENSORES PULSANTES */
+.status-header { margin-bottom: 3rem; }
+.sensor-display { display: flex; gap: 30px; }
+.sensor-item { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text-s); }
+
+.ponto-pulsante {
+    width: 8px; height: 8px; border-radius: 50%; position: relative;
+}
+.verde { background: var(--accent); }
+.amarelo { background: #ffcc00; }
+.ponto-pulsante::after {
+    content: ''; position: absolute; width: 100%; height: 100%;
+    border-radius: 50%; animation: pulse 2s infinite; background: inherit;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(4); opacity: 0; }
+}
+
+/* FORMULÁRIO PROFISSIONAL */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.full { grid-column: span 2; }
+
+input {
+    width: 100%; background: #000; border: 1px solid var(--border);
+    padding: 15px; color: #fff; border-radius: 10px; margin-top: 8px;
+}
+
+#btn-salvar {
+    grid-column: span 2;
+    background: var(--accent); color: #000; border: none;
+    padding: 20px; border-radius: 12px; font-weight: 900;
+    cursor: pointer; margin-top: 1rem; transition: var(--transition-pro);
+}
+#btn-salvar:hover { transform: translateY(-3px); opacity: 0.9; }
+
+/* RESPONSIVIDADE TOTAL (TABLET E MOBILE) */
+@media (max-width: 1024px) {
+    .conteudo { grid-template-columns: 1fr; }
+    .caixa-nav { height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); }
+    .caixa-agrupamento { padding: 2rem; }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="validade proxima.css">
+    <title>validade proxima</title>
+</head>
+<body>
+<main class="inventory-container">
+    <header class="inventory-header">
+        <div class="brand-info">
+            <h1 class="main-title">Controle de Validade</h1>
+            <p class="subtitle">Produtos organizados por proximidade de vencimento.</p>
+        </div>
+        
+        <div class="status-cards">
+            <div class="card-mini danger">
+                <span class="dot dot-expired"></span>
+                <span>Crítico (Hoje)</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="filter-section card">
+        <div class="filter-controls">
+            <button class="btn-filter">Ver Tudo</button>
+            <button class="btn-filter outline">Vencidos</button>
+            <button class="btn-filter outline">Próximos 7 dias</button>
+        </div>
+    </section>
+
+    <section class="table-card card">
+        <h2 class="group-title red-text">Atenção Imediata</h2>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Lote</th>
+                        <th>Data Vencimento</th>
+                        <th>Dias Restantes</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="urgent-row">
+                        <td><strong>Queijo Prato 400g</strong></td>
+                        <td>#LT-552</td>
+                        <td>20/01/2026</td>
+                        <td><span class="text-danger">Vence Hoje</span></td>
+                        <td><span class="status-tag expired"><span class="dot dot-expired"></span> Crítico</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="table-card card">
+        <h2 class="group-title blue-text">Monitoramento Geral</h2>
+        <div class="table-responsive">
+            <table class="data-table">
+                <tbody>
+                    <tr>
+                        <td><strong>Iogurte de Morango</strong></td>
+                        <td>#LT-990</td>
+                        <td>15/02/2026</td>
+                        <td>26 dias</td>
+                        <td><span class="status-tag ok"><span class="dot dot-ok"></span> Seguro</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leite Condensado</strong></td>
+                        <td>#LT-112</td>
+                        <td>10/05/2026</td>
+                        <td>110 dias</td>
+                        <td><span class="status-tag ok"><span class="dot dot-ok"></span> Seguro</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section>
+              <div class="container-return">
+    
+            <a class="inicio" href="/tela loguin.html" target="_self" rel="noopener noreferrer" class="btn-voltar">
+    &larr; Voltar para o Início </a>
+
+    <script src="/fatura.js/validade proxima.js"></script>
+        </div>
+    </section>
+</main>
+    
+</body>
+</html>

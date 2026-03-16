@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estoque.css">
+    <title>estoque</title>
+</head>
+<body>
+    <main class="inventory-container">
+    <header class="inventory-header">
+        <div class="brand-info">
+            <h1>Monitoramento de Estoque</h1>
+            <p class="paragrafo">Gerenciamento de produtos e controle de validade.</p>
+        </div>
+        
+        <div class="status-cards">
+            <div class="card-mini warning">
+                <span class="dot"></span>
+                <span>Vencendo em breve</span>
+            </div>
+            <div class="card-mini danger">
+                <span class="dot"></span>
+                <span>Itens Vencidos</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="filter-section card">
+        <div class="search-box">
+            <input type="text" id="inventorySearch" placeholder="Pesquisar por nome ou lote...">
+        </div>
+        <div class="filter-controls">
+            <select>
+                <option>Todos os Departamentos</option>
+                <option>Alimentos</option>
+                <option>Limpeza</option>
+            </select>
+            <button class="btn-filter">Aplicar Filtro</button>
+        </div>
+    </section>
+
+    <section class="table-card card">
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Lote</th>
+                        <th>Validade</th>
+                        <th>Quantidade</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Iogurte Grego 500g</strong></td>
+                        <td>#L-9982</td>
+                        <td>15/05/2026</td>
+                        <td>42 un.</td>
+                        <td><span class="status-tag ok">Em dia</span></td>
+                    </tr>
+                    <tr class="row-vencido">
+                        <td><strong>Queijo Mussarela KG</strong></td>
+                        <td>#L-8810</td>
+                        <td>10/01/2026</td>
+                        <td>08 un.</td>
+                        <td><span class="status-tag expired">Vencido</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section>
+        <div class="container-return">
+    
+            <a class="inicio" href="/tela loguin.html" target="_self" rel="noopener noreferrer" class="btn-voltar">
+    &larr; Voltar para o Início </a>
+
+    <script src="/fatura.js/estoque.js"></script>
+        </div>
+    </section>
+</main>
+</body>

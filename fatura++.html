@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="description" content="fatura++ ó ajudante do comerciante">
+    <link rel="stylesheet" href="style.css">
+    <title> fatura++</title>
+</head>
+<body>
+<main class="conteudo">
+    <aside class="caixa-nav">
+        <div class="logo-area">
+            <h1>fatura<span>++</span></h1>
+        </div>
+        <nav class="navegação">
+            <div class="container-nav">
+                <span class="nav-title">📦 Operacional</span>
+                <ul>
+                    <li><a href="estoque de produtos ++/estoque.html" target="_self" rel="noopener noreferrer" class="active">Consultar Estoque</a></li>
+                    <li><a href="mais vendidos ++/mais vendidos.html" target="_self" rel="noopener noreferrer">Mais Vendidos</a></li>
+                    <li><a href="validade proxima++/validade proxima.html" target="_self" rel="noopener noreferrer">Validade Próxima</a></li>
+                </ul>
+            </div>
+            <div class="container-nav">
+                <span class="nav-title">💰 Gestão Financeira</span>
+                <ul>
+                    <li><a href="fluxo de caixa++/fluxo de caixa.html" target="_self" rel="noopener noreferrer">Fluxo de Caixa</a></li>
+                    <li><a href="lucro por produto++/lucro por produto.html" target="_self" rel="noopener noreferrer">Lucro por Produto</a></li>
+                    <li><a href="investimentos ++/investimentos.html" target="_self" rel="noopener noreferrer">Investimentos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <section class="caixa-agrupamento">
+        
+        <header class="status-header">
+            <div class="sensor-display">
+                <div class="sensor-item">
+                    <span class="ponto-pulsante verde"></span>
+                    <p>Caixa Monitorado</p>
+                </div>
+                <div class="sensor-item">
+                    <span class="ponto-pulsante amarelo"></span>
+                    <p>Aguardando Transação</p>
+                </div>
+            </div>
+        </header>
+
+       <div class="principais">
+    <div class="caixa investimento">
+        <span class="label">Investimento Total</span>
+        <p id="total-investido">R$ 0,00</p>
+    </div>
+    <div class="caixa lucro"> 
+        <span class="label">Lucro Líquido Real</span>
+        <p id="lucro-acumulado">R$ 0,00</p>
+    </div>
+    <div class="caixa roi">
+        <span class="label">Rentabilidade (ROI)</span>
+        <p id="roi-valor">0%</p>
+    </div>
+</div>
+
+<div class="cadastrar-produtos">
+    <h2 class="title">Novo Lançamento (Estoque)</h2>
+    <form id="form-produtos" class="form-grid">
+        <div class="input-field full">
+            <label>Descrição do Produto</label>
+            <input type="text" id="produtos" placeholder="Ex: Cerveja Artesanal 500ml">
+        </div>
+        <div class="input-field">
+            <label>Preço Custo (Investimento)</label>
+            <input type="number" id="custo" step="0.01" placeholder="0.00">
+        </div>
+        <div class="input-field">
+            <label>Preço Venda Previsto</label>
+            <input type="number" id="preço-venda" step="0.01" placeholder="0.00">
+        </div>
+        <div class="input-field full">
+            <label>Data de Validade</label>
+            <input type="date" id="validade">
+        </div>
+        <button type="button" id="btn-salvar">Registrar no Sistema</button>
+    </form>
+</div>
+    
+    </section>
+</main>
+<script src="/fatura.js/fatura++.js"></script>
+    
+</body>
+

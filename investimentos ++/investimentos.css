@@ -1,0 +1,159 @@
+/* style.css - Versão Premium com Cores e Interatividade */
+
+:root {
+     --bg-main: #000000;
+    --bg-card: #161b22;
+    --text-main: #ffffff;
+    --text-secundario: #8b949e;
+    --accent-color: #2ea043; /* Verde principal */
+    --accent-hover: #3fb950; /* Verde mais claro para o hover */
+    --border: #30363d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+html,css{
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cards de Resumo */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 16px;
+    transition: all 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Efeito ao passar o mouse no card */
+.card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card span {
+    color: var(--text-secundario);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* Destaque para o valor principal */
+.valor-verde {
+    color: var(--accent-color);
+}
+
+/* Tabela Detalhada */
+.table-container {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden; /* Garante que os cantos da tabela fiquem arredondados */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-secundario);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 20px;
+    text-align: left;
+}
+
+td {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estilo para os números na tabela */
+
+.container-return{   /* centraliozação de div e logo abaixo apenas estlização da tag ancora*/
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+.inicio{
+ display: inline-block;
+ text-decoration: none;
+ font-size: 1.2rem;
+ color: var(--accent-hover);
+ 
+
+}
+
+.buton{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    transition: all transform 0.4s ease-in-out,border-color 0.4s ease-in-out;
+}
+.btn-ação{
+    padding: 4px;
+    border-radius:7px;
+    border: none;
+    transition: all border 0.4s ease-in-out, transform 0.4s ease-in-out;
+    cursor: pointer;
+    background-color: #3fb950;
+    color: rgba(0, 0, 0, 0.911);
+    font-size: 15px;
+  
+}
+.btn-ação:hover{
+    border: 2px solid white;
+    transform: translate(1.1);
+    
+
+}

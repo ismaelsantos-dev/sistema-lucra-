@@ -1,0 +1,173 @@
+
+/* Variáveis de Cores - Estilo Fatura++ Dark */
+:root {
+     --bg-main: #000000;   /* Preto forte para não sair do padrão das outras paginas  */
+    --fundo-card: #161b22;        /* Cinza escuro dos cards */
+    --borda: #30363d;             /* Cor das divisórias e bordas */
+    --texto-claro: #e6edf3;       /* Texto principal (quase branco) */
+    --texto-escuro: #8b949e;      /* Texto de apoio (cinza) */
+    --azul-destaque: #58a6ff;     /* Azul estilo GitHub/Tech */
+    --verde-neon: #3fb950;        /* Verde para Entradas */
+    --vermelho-neon: #f85149;     /* Vermelho para Saídas */
+}
+
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+html css{
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--texto-claro);
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 span {
+    color: var(--azul-destaque);
+}
+
+.btn-new {
+    background-color: var(--azul-destaque);
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: filter 0.2s;
+}
+
+.btn-new:hover {
+    filter: brightness(1.2);
+}
+
+/* Dashboard Cards (Foco na Visibilidade) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: var(--fundo-card);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--borda);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card p {
+    font-size: 0.85rem;
+    color: var(--texto-escuro);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card strong {
+    font-size: 1.6rem;
+    display: block;
+}
+
+/* Cores específicas dos textos nos cards */
+.card-in strong { color: var(--verde-neon); }
+.card-out strong { color: var(--vermelho-neon); }
+.card-total strong { color: var(--azul-destaque); }
+
+/* Tabela Responsiva Dark */
+.table-container {
+    background: var(--fundo-card);
+    border-radius: 10px;
+    border: 1px solid var(--borda);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--borda);
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--texto-escuro);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+td {
+    font-size: 0.9rem;
+}
+
+/* Estilização dos Valores e Tags na Tabela */
+.val-in { color: var(--verde-neon); font-weight: bold; }
+.val-out { color: var(--vermelho-neon); font-weight: bold; }
+
+.tag {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.tag-in { 
+    background: rgba(63, 185, 80, 0.15); 
+    color: var(--verde-neon); 
+}
+
+.tag-out { 
+    background: rgba(248, 81, 73, 0.15); 
+    color: var(--vermelho-neon); 
+}
+.container-return{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+.inicio{
+ display: inline-block;
+ text-decoration: none;
+ font-size: 1.2rem;
+ color: var(--azul-destaque);
+
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
