@@ -19,7 +19,7 @@ body {
     line-height: 1.6;
 }
 
-/* ESTRUTURA MASTER */
+
 .conteudo {
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr;
@@ -80,7 +80,7 @@ body {
     margin: 0 auto;
 }
 
-/* CARDS E DASHBOARD */
+
 /* CARDS E DASHBOARD - Ajustado apenas para aplicar o estilo em todos os 3 cards corretamente */
 .principais {
     display: grid;
@@ -95,14 +95,20 @@ body {
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    overflow: hidden;
 }
+
+
 #roi-valor {
-    font-size: 2.5rem;       /* Deixa o número bem grande e responsivo */
-    font-weight: 700;        /* Deixa em negrito (bold) para dar peso */
-    color: var( --accent);          /* Opcional: Um verde sucesso para combinar com finanças */
-    display: block;          /* Faz o número ficar em uma linha própria, se preferir */
-    margin-top: 10px;        /* Dá um espacinho em relação ao texto de cima */
-    letter-spacing: -1px;    /* Opcional: Junta um pouco os números grandes para um visual mais moderno */
+    font-size: 2.5rem;       
+    font-weight: 700;        
+    color: var(--accent);          
+    display: block;          
+    margin-top: 10px;        
+    letter-spacing: -1px;    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* NÚMEROS GRANDES */
@@ -113,8 +119,20 @@ body {
     margin-top: 0.5rem;
     letter-spacing: -1px;
 }
-#total-investido { color: var(--info); }
-#lucro-acumulado { color: var(--accent); }
+#total-investido {
+     color: var(--info);
+     display: block;           /* Garante que se comporte como bloco */
+    white-space: nowrap;      /* Impede o número de quebrar para a linha de baixo */
+    overflow: hidden;         /* Recorta o número se passar do limite */
+    text-overflow: ellipsis;
+     }
+#lucro-acumulado {
+     color: var(--accent); 
+     display: block;           /* Garante que se comporte como bloco */
+    white-space: nowrap;      /* Impede o número de quebrar para a linha de baixo */
+    overflow: hidden;         /* Recorta o número se passar do limite */
+    text-overflow: ellipsis;
+    }
 
 /* SENSORES PULSANTES */
 .status-header { margin-bottom: 3rem; }
@@ -153,9 +171,144 @@ input {
 }
 #btn-salvar:hover { transform: translateY(-3px); opacity: 0.9; }
 
-/* RESPONSIVIDADE TOTAL (TABLET E MOBILE) */
 @media (max-width: 1024px) {
-    .conteudo { grid-template-columns: 1fr; }
-    .caixa-nav { height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); }
-    .caixa-agrupamento { padding: 2rem; }
+    .conteudo { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .caixa-nav { 
+        height: auto; 
+        position: relative; 
+        border-right: none; 
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .caixa-agrupamento { 
+        padding: 2.5rem 2rem; 
+        width: 100%;
+    }
+
+    .principais {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .caixa-nav {
+        padding: 1.5rem;
+    }
+
+    .caixa-agrupamento { 
+        padding: 1.5rem 1rem; 
+    }
+
+    .principais {
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+
+    .caixa, .caixa-lucro, .roi, .cadastrar-produtos {
+        padding: 1.5rem; 
+        border-radius: 15px;
+    }
+
+    #total-investido, #lucro-acumulado, #roi-valor {
+        font-size: 1.8rem; 
+    }
+
+   
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .full {
+        grid-column: span 1;
+    }
+
+    #btn-salvar {
+        grid-column: span 1;
+        padding: 15px;
+    }
+
+    .sensor-display {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* 3. REGRA EXCLUSIVA PARA SMARTWATCHES (Telas micro até 280px, como Apple Watch/Galaxy Watch) */
+@media (max-width: 280px) {
+    /* Esconde a sidebar completamente no relógio para focar só nos dados */
+    .caixa-nav {
+        display: none; 
+    }
+
+    /* Remove paddings exagerados para aproveitar cada milímetro do visor */
+    .caixa-agrupamento {
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    /* Deixa o cabeçalho de status bem compacto */
+    .status-header {
+        margin-bottom: 1rem;
+    }
+    
+    .sensor-display {
+        gap: 5px;
+    }
+    
+    .sensor-item {
+        font-size: 0.7rem; /* Texto bem miúdo para caber */
+    }
+
+    /* Cards colados nas bordas, mas com um micro respiro */
+    .principais {
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+   
+    .caixa, .caixa-lucro, .roi, .cadastrar-produtos {
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+
+
+    .label {
+        font-size: 0.65rem;
+    }
+
+    #total-investido, #lucro-acumulado, #roi-valor {
+        font-size: 1.2rem; 
+        margin-top: 0.2rem;
+    }
+
+    .cadastrar-produtos h2 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    input {
+        padding: 8px; 
+        font-size: 0.8rem;
+        margin-top: 4px;
+    }
+
+    label {
+        font-size: 0.7rem;
+    }
+
+    #btn-salvar {
+        padding: 12px;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
 }

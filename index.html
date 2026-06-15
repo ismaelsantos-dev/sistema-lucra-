@@ -17,7 +17,7 @@
     <div class="container-nav">
         <span class="nav-title">📦 Operacional</span>
         <ul>
-            <li><a href="estoque-produtos /index.html" target="_self" rel="noopener noreferrer">Consultar Estoque</a></li>
+            <li><a href="estoque-produtos/index.html" target="_self" rel="noopener noreferrer">Consultar Estoque</a></li>
             <li><a href="mais-vendidos/index.html" target="_self" rel="noopener noreferrer">Mais Vendidos</a></li>
             <li><a href="validade-proxima/index.html" target="_self" rel="noopener noreferrer">Validade Próxima</a></li>
         </ul>
@@ -66,7 +66,7 @@
             <h2 class="title">Novo Lançamento (Estoque)</h2>
             <form id="form-produtos" class="form-grid">
                 <div class="input-field full">
-                    <label>Descrição do Produto</label>
+                    <label for="produtos">Descrição do Produto</label>
                     <input type="text" id="produtos" placeholder="Ex: Cerveja Artesanal 500ml">
                 </div>
 
@@ -80,16 +80,16 @@
                 </div>
 
                 <div class="input-field">
-                    <label>Preço Custo (Investimento)</label>
+                    <label for="custo">Preço Custo (Investimento)</label>
                     <input type="number" id="custo" step="0.01" placeholder="0.00">
                 </div>
                 <div class="input-field">
-                    <label>Preço Venda Previsto</label>
+                    <label for="preço-venda">Preço Venda Previsto</label>
                     <input type="number" id="preço-venda" step="0.01" placeholder="0.00">
                 </div>
 
                 <div class="input-field full">
-                    <label>Data de Validade</label>
+                    <label for="validade">Data de Validade</label>
                     <input type="date" id="validade">
                 </div>
 
@@ -99,7 +99,7 @@
     </section>
   
 </main>
-<script src="/fatura.js/fatura++.js"></script>
+<script src="fatura.js/pagina-inicial.js"></script>
 </body>
 </html>
 
