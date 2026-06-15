@@ -81,6 +81,7 @@ body {
 }
 
 /* CARDS E DASHBOARD */
+/* CARDS E DASHBOARD - Ajustado apenas para aplicar o estilo em todos os 3 cards corretamente */
 .principais {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -88,12 +89,20 @@ body {
     margin-bottom: 3rem;
 }
 
-.caixa, .caixa-lucro, .cadastrar-produtos {
+.caixa, .caixa-lucro, .roi, .cadastrar-produtos {
     background: var(--bg-surface);
     border: 1px solid var(--border);
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+#roi-valor {
+    font-size: 2.5rem;       /* Deixa o número bem grande e responsivo */
+    font-weight: 700;        /* Deixa em negrito (bold) para dar peso */
+    color: var( --accent);          /* Opcional: Um verde sucesso para combinar com finanças */
+    display: block;          /* Faz o número ficar em uma linha própria, se preferir */
+    margin-top: 10px;        /* Dá um espacinho em relação ao texto de cima */
+    letter-spacing: -1px;    /* Opcional: Junta um pouco os números grandes para um visual mais moderno */
 }
 
 /* NÚMEROS GRANDES */
@@ -128,7 +137,7 @@ body {
 }
 
 /* FORMULÁRIO PROFISSIONAL */
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;grid-auto-rows: auto; }
 .full { grid-column: span 2; }
 
 input {
